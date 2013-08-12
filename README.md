@@ -9,8 +9,19 @@ http://sourceforge.net/projects/siriproxyrpi/  - Raspbian with siriproxy
 
 This will allow you to control set devices in the house using your status remotes and Siri.
 
+To install Apache do the following
+
+apt-get install apache php5 php5-cli -y
+
 Place all /usr/bin in to your /usr/bin dir
 Place all /var/www/ in to your /var/www/ directorty
+
+Ensure all the files have been chmod 777 in the usr/bin/ folder
+
+cd /usr/bin/
+chmod 777 *.sh
+Chmod 777 pihat
+
 
 add the following line to /etc/sudoers
 www-data ALL=(ALL) NOPASSWD: ALL
