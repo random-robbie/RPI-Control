@@ -9,7 +9,7 @@ $hostname = "";
 $info = "1"; // set to 1 to show debug info, 0 to hide it
 $test = "0"; // set to 1 to only send test messages (doesnt use credits), set to 0 to send sms messages
   
-$keyword = "99DQF";//The keyword you wish to send a response for, Case Sensitive.
+$keyword = "";//The keyword you wish to send a response for, Case Sensitive.
 
 
 //##################### POST settings & MYSQL Connections #############
