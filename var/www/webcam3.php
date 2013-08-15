@@ -1,5 +1,6 @@
 <?php
 // Is Motion Started?
+// Alter the IP address and port to the IP of your 2nd cam
 if(fsockopen("192.168.0.9",8083))
 {
 // Motion is started and running display the stream in Iframe
