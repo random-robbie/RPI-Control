@@ -12,6 +12,7 @@ http://sourceforge.net/projects/siriproxyrpi/  - Raspbian with siriproxy
 This will allow you to control set devices in the house using your status remotes and Siri.
 
 The remote sockets - http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SREMSOC3PK3/dp/B003XOXAVG/
+
 The Transmitter - http://www.ebay.co.uk/itm/140958983913
 
 Apache Setup
@@ -59,7 +60,12 @@ and ensure this is put in to the $keyword section.
 
 Import the database.sql to set the database up.
 
-
+To do
+---------------
+1) Change the items name and put them in to a config file.
+2) Have it so you can disable and enable webcams via config file
+3) Better theme??
+4) Upload Siri Proxy Example I used.
 
 For Me
 --------------
