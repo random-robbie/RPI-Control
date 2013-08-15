@@ -11,6 +11,9 @@ http://sourceforge.net/projects/siriproxyrpi/  - Raspbian with siriproxy
 
 This will allow you to control set devices in the house using your status remotes and Siri.
 
+The remote sockets - http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SREMSOC3PK3/dp/B003XOXAVG/
+The Transmitter - http://www.ebay.co.uk/itm/140958983913
+
 Apache Setup
 ------------
 
@@ -35,7 +38,9 @@ SMS Setup
 ------------
 
 Configuring TextLocal to Post…
+
 you need to tell text local where to POST too. Its a simple setup process:
+
 1. Login to textlocal dashboard
 2. Select ‘inboxes’
 3. Select the inbox you wish to use and press ‘settings’
@@ -52,11 +57,13 @@ But do not forget to fill in the username password database details.
 for the keyword check the 5 digits in your text local account for the 60777 number 
 and ensure this is put in to the $keyword section.
 
+Import the database.sql to set the database up.
+
 
 
 For Me
 --------------
-any one kind enough to throw a donation my way towards a raspberry pi cam would be welcome - txt3rob@Gmail.com
+Any one kind enough to throw a donation my way towards a raspberry pi cam would be welcome - txt3rob@Gmail.com
 
 Any error or need help email me or PM on the raspberry pi forums.
 
