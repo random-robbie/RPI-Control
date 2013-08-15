@@ -63,8 +63,11 @@ Import the database.sql to set the database up.
 To do
 ---------------
 1) Change the items name and put them in to a config file.
+
 2) Have it so you can disable and enable webcams via config file
+
 3) Better theme??
+
 4) Upload Siri Proxy Example I used.
 
 For Me
