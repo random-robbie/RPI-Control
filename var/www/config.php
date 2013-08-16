@@ -6,11 +6,11 @@ $item2 = "TV";
 $item3 = "Kettle";
 
 // Mysql Config
-$username = "rob_sms";
-$password = "raspberrysmspi";
-$dbname = "texts";
-$tablename = "texts";
-$hostname = "texts.c3wfd9zc0zet.us-east-1.rds.amazonaws.com";
+$username = "";
+$password = "";
+$dbname = "";
+$tablename = "";
+$hostname = "";
 
 // Configuration variables. Consult http://www.txtlocal.co.uk/developers/ for more info.
 $info = "1"; // set to 1 to show debug info, 0 to hide it
