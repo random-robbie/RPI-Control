@@ -56,23 +56,24 @@ I found it better to have the database on an external server.
 But do not forget to fill in the username password database details.
 
 for the keyword check the 5 digits in your text local account for the 60777 number 
-and ensure this is put in to the $keyword section.
+and ensure this is put in to the $keyword section in config.php.
 
 Import the database.sql to set the database up.
 
 To do
 ---------------
-1) Change the items name and put them in to a config file.
 
-2) Have it so you can disable and enable webcams via config file
+1) Have it so you can disable and enable webcams via config file
 
-3) Better theme??
+2) Better theme??
 
-4) Upload Siri Proxy Example I used.
+3) Upload Siri Proxy Example I used.
+
+4) Twitter commnads
 
 For Me
 --------------
 Any one kind enough to throw a donation my way towards a raspberry pi cam would be welcome - txt3rob@Gmail.com
 
-Any error or need help email me or PM on the raspberry pi forums.
+Any errors or need help email me or PM on the raspberry pi forums.
 
