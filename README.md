@@ -35,6 +35,13 @@ www-data ALL=(ALL) NOPASSWD: ALL
 
 for WOL ensure you do apt-get install wakeonlan -y
 
+Config.php
+----------
+
+use this file to configure all the variables.
+
+this will set the buttons and the sms commands required.
+
 SMS Setup
 ------------
 
