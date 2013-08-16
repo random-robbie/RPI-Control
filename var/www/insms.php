@@ -1,15 +1,6 @@
 <?php
-$username = "";
-$password = "";
-$dbname = "";
-$tablename = "texts";
-$hostname = ""; 
-
-// Configuration variables. Consult http://www.txtlocal.co.uk/developers/ for more info.
-$info = "1"; // set to 1 to show debug info, 0 to hide it
-$test = "0"; // set to 1 to only send test messages (doesnt use credits), set to 0 to send sms messages
-  
-$keyword = "";//The keyword you wish to send a response for, Case Sensitive.
+define('__ROOT__', dirname(dirname(__FILE__))); 
+require_once(__ROOT__.'/www/config.php'); 
 
 
 //##################### POST settings & MYSQL Connections #############
@@ -33,18 +24,18 @@ $selected = mysql_select_db($dbname,$dbhandle)
   $insertsms = mysql_query("INSERT INTO ".$tablename." (sender,content,inNumber,email,credits) VALUES ('".$sender."', '".$content."', '".$inNumber."', '".$email."', '".$credits."')");
 
 // Looking for the key phrases to action
-$sql1 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '99DQF light on'";
+$sql1 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item1 on'";
 $query = mysql_query( $sql1, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {
     passthru('sudo ch1on');
-	echo "<br>Turning light on ";
+	echo "<br>".$item1." light on ";
 }
 else
 {
-    echo "<br>light on not found";
+    echo "<br>".$item1." on not found";
 }
-$sql2 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '99DQF light off'";
+$sql2 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item1 off'";
 $query = mysql_query( $sql2, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {
@@ -56,7 +47,7 @@ else
     echo "<br>light off not found";
 }
 
-$sql3 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '99DQF tv on'";
+$sql3 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item2 on'";
 $query = mysql_query( $sql3, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {
@@ -68,16 +59,16 @@ else
     echo "<br>TV on not found";
 }
 
-$sql4 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '99DQF tv off'";
+$sql4 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item2 off'";
 $query = mysql_query( $sql4, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {	
 	passthru('sudo ch2off');
-    echo "<br>Turning Tv off ";
+    echo "<br>".$item2." Tv off ";
 }
 else
 {
-    echo "<br>TV off not found";
+    echo "<br>".$item2." off not found";
 	}
 
   
