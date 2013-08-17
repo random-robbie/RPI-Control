@@ -29,7 +29,7 @@ $query = mysql_query( $sql1, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {
     passthru('sudo ch1on');
-	echo "<br>".$item1." light on ";
+	echo "<br>".$item1." on ";
 }
 else
 {
@@ -40,11 +40,11 @@ $query = mysql_query( $sql2, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {
 	passthru('sudo ch1off');
-    echo "<br>Turning light off ";
+    echo "<br>".$item1." off ";
 }
 else
 {
-    echo "<br>light off not found";
+    echo "<br>".$item1." off not found";
 }
 
 $sql3 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item2 on'";
@@ -52,11 +52,11 @@ $query = mysql_query( $sql3, $dbhandle );
 if ( mysql_num_rows( $query ) > 0 )
 {
 	passthru('sudo ch2on');
-    echo "<br>Turning Tv on ";
+    echo "<br>Turning ".$item2." on ";
 }
 else
 {
-    echo "<br>TV on not found";
+    echo "<br>".$item2." on not found";
 }
 
 $sql4 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item2 off'";
@@ -69,6 +69,40 @@ if ( mysql_num_rows( $query ) > 0 )
 else
 {
     echo "<br>".$item2." off not found";
+	}
+$sql5 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item3 on'";
+$query = mysql_query( $sql5, $dbhandle );
+if ( mysql_num_rows( $query ) > 0 )
+{	
+	passthru('sudo ch3on');
+    echo "<br>".$item3." on ";
+}
+else
+{
+    echo "<br>".$item3." on not found";
+	}
+
+$sql7 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword all off'";
+$query = mysql_query( $sql7, $dbhandle );
+if ( mysql_num_rows( $query ) > 0 )
+{	
+	passthru('sudo alloff');
+    echo "<br>all off ";
+}
+else
+{
+    echo "<br>alloff not found";
+	}
+$sql8 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword all on'";
+$query = mysql_query( $sql8, $dbhandle );
+if ( mysql_num_rows( $query ) > 0 )
+{	
+	passthru('sudo allon');
+    echo "<br>all on ";
+}
+else
+{
+    echo "<br>all on not found";
 	}
 
   
@@ -102,6 +136,6 @@ else
 $selected = mysql_query("UPDATE ".$tablename." SET messagesent = '1' WHERE id = '$id' ");//updates 'messagesent' to show it has been sent out.
  
    }//end while
-   // Remote blank rows if page is accessed and no data is passed.
+   // Remove blank rows if page is accessed and no data is passed.
    mysql_query("DELETE FROM `texts` WHERE `sender` = 0");
    ?>
