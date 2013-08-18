@@ -1,7 +1,7 @@
 <?php
 $ip = $_SERVER['SERVER_ADDR'];
 // Change Ip for your Siri proxy
-if(fsockopen("192.168.0.6",443))
+if(fsockopen($ip,443))
 {
 $externalContent = file_get_contents('http://www.icanhazip.com/');
 echo ('<center>
