@@ -23,6 +23,9 @@ $selected = mysql_select_db($dbname,$dbhandle)
 // inserts POST'd text messages from txtlocal api
   $insertsms = mysql_query("INSERT INTO ".$tablename." (sender,content,inNumber,email,credits) VALUES ('".$sender."', '".$content."', '".$inNumber."', '".$email."', '".$credits."')");
 
+// Delete older SMS
+mysql_query("DELETE FROM `texts` WHERE `datereceived` < \'NOW() - INTERVAL 1 DAY\'\n". "");
+
 // Looking for the key phrases to action
 $sql1 = "SELECT * FROM ".$tablename." WHERE forward = '0' AND `content` = '$keyword $item1 on'";
 $query = mysql_query( $sql1, $dbhandle );
