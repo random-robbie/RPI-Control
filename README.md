@@ -15,6 +15,8 @@ The remote sockets - http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SR
 
 The Transmitter - http://www.ebay.co.uk/itm/140958983913
 
+Text Local Account - http://www.txtlocal.co.uk/?tlrx=149130
+
 Apache Setup
 ------------
 
