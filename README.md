@@ -26,17 +26,20 @@ Place all /usr/bin in to your /usr/bin dir
 Place all /var/www/ in to your /var/www/ directorty
 
 Ensure all the files have been chmod 777 in the usr/bin/ folder
-
+```
 cd /usr/bin/
 chmod 777 *.sh
 Chmod 777 pihat
-
+```
 
 add the following line to /etc/sudoers
+```
 www-data ALL=(ALL) NOPASSWD: ALL
-
-for WOL ensure you do apt-get install wakeonlan -y
-
+```
+for WOL ensure you do 
+```
+apt-get install wakeonlan -y
+```
 Config.php
 ----------
 
@@ -78,7 +81,7 @@ To do
 
 3) Upload Siri Proxy Example I used.
 
-4) Twitter commnads
+4) Twitter commands
 
 For Me
 --------------
