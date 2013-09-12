@@ -17,6 +17,23 @@ The Transmitter - http://www.ebay.co.uk/itm/140958983913
 
 Text Local Account - http://www.txtlocal.co.uk/?tlrx=149130
 
+
+Parts List
+----------
+
+```
+1) http://www.amazon.co.uk/Raspberry-Pi-Model-Latest-VERSION/dp/B009SMWSQA
+2) USB mobile phone charger and USB to micro usb b (samsung blackberry nokia) or  - http://www.amazon.co.uk/Hostey%C2%AE-Micro-Supply-Charger-Raspberry/dp/B00C1EKF5S/ref=pd_sim_ce_5
+3) http://www.ebay.co.uk/itm/140958983913
+4) 16GB SD card - http://www.amazon.co.uk/For-Raspberry-preloaded-operating-partitioned/dp/B008IU78EK/ref=pd_bxgy_ce_text_z
+5) http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SREMSOC3PK3/dp/B003XOXAVG/ - remove control sockets
+6) USB wireless adaptor - http://www.amazon.co.uk/USB-Wifi-Adapter-Raspberry-Pi/dp/B009FA2UYK/ref=pd_sim_ce_7
+7 ) text local account - http://www.txtlocal.co.uk/?tlrx=149130
+
+```
+
+
+
 Apache Setup
 ------------
 
