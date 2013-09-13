@@ -96,9 +96,7 @@ To do
 
 2) Better theme??
 
-3) Upload Siri Proxy Example I used.
-
-4) Twitter commands
+3) Twitter commands
 
 For Me
 --------------
