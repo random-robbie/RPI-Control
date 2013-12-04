@@ -15,7 +15,7 @@ The remote sockets - http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SR
 
 The Transmitter - http://www.ebay.co.uk/itm/140958983913
 
-Text Local Account - http://www.txtlocal.co.uk/?tlrx=149130
+Text Local Account - http://www.textlocal.com/?tlrx=162301.
 
 
 Parts List
@@ -28,7 +28,7 @@ Parts List
 4) 16GB SD card - http://www.amazon.co.uk/For-Raspberry-preloaded-operating-partitioned/dp/B008IU78EK/ref=pd_bxgy_ce_text_z
 5) http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SREMSOC3PK3/dp/B003XOXAVG/ - remove control sockets
 6) USB wireless adaptor - http://www.amazon.co.uk/USB-Wifi-Adapter-Raspberry-Pi/dp/B009FA2UYK/ref=pd_sim_ce_7
-7 ) text local account - http://www.txtlocal.co.uk/?tlrx=149130
+7 ) text local account - http://www.textlocal.com/?tlrx=162301.
 
 ```
 
