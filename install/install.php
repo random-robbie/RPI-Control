@@ -12,6 +12,7 @@
 $current2 = getcwd();
 $current = str_replace('install', '', $current2);
 $configfile = "".$current."config.php";
+$functionsfile = "".$current."functions.php";
 
 function header2()
 {
@@ -284,7 +285,7 @@ function step_4(){
 <body>
 <script>
 $(document).ready(function(){
-    $("submit").click(function(){
+    $("Add Device").click(function(){
         $.post("install.php?step=4",
             $('#post').serialize(),
             function(data,status){
@@ -314,7 +315,7 @@ Channel:
 <option value="7">7</option>
 </select>
 <input type="submit" name="submit" value="Add Device"></form> <a href="install.php?step=5"><button>Next</button></a>
-<div id="results"></div></body>
+<div id="results"></div>
 <?php 
 }
 if (isset($_POST['submit']) && $_POST['submit']=="Add Device") {
@@ -327,6 +328,7 @@ if (isset($_POST['submit']) && $_POST['submit']=="Add Device") {
    echo "All fields are required! Please re-enter.<br />";
 } else {
 include ''.$configfile.'';
+include ''.$functionsfile.'';
 addevice ($devicename,$devicebrand,$deviceremoteid,$deviceremoteid);
 }
 }
@@ -352,6 +354,7 @@ $dir = "".$current."sms/";
 $results = glob($dir."*.php");
 $diremove = str_replace($dir, '', $results);
 GLOBAL $configfile;
+GLOBAL $functionsfile;
 GLOBAL $dbh;
 
 ?>
@@ -370,6 +373,7 @@ echo '<option value="'.$provider.'">'.$provider.'</option>';
 <?php
 GLOBAL $configfile;
 GLOBAL $dbh;
+GLOBAL $functionsfile;
 if (isset($_POST['submit']) && $_POST['submit']=="submit") {
 $script = $_POST['smsprovider'];
 
@@ -405,6 +409,7 @@ Mobile Number: <input type="text" name="number"><br>
 <?php
 GLOBAL $configfile;
 GLOBAL $dbh;
+GLOBAL $functionsfile;
 if (isset($_POST['submit']) && $_POST['submit']=="Add User") {
    $name=isset($_POST['name'])?$_POST['name']:"";
    $number=isset($_POST['number'])?$_POST['number']:"";
@@ -423,6 +428,7 @@ function step_7(){
 GLOBAL $configfile;
 include (''.$configfile.'');
 GLOBAL $dbh;
+GLOBAL $functionsfile;
 ?>
 <script>
 $(document).ready(function(){
@@ -453,6 +459,7 @@ if (isset($_POST['submit']) && $_POST['submit']=="add wol") {
 } else {
 GLOBAL $configfile;
 include (''.$configfile.'');
+GLOBAL $functionsfile;
 addmac ($name,$mac);
 }
 }

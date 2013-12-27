@@ -18,7 +18,7 @@ $uptime = shell_exec("cut -d. -f1 /proc/uptime");
 $stats = shell_exec('.'.$filepath.'/scripts/stats.sh');
 
 //List Devices
-$GLOBAL $dbh;
+GLOBAL $dbh;
 $devices = $dbh->prepare("SELECT * FROM devices");
 $devices->execute();
 
