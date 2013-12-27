@@ -17,19 +17,14 @@ include ('functions.php');
 	  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-	  <script type="text/javascript">
-	  $(document).ready(function () {
-	$("body").delegate("click", "button", function(){ 
-
-var myId = $(this).attr("id"); 
-window.location.href = "index.php?id="+myId; 
-
-}); 
-
-</script>
-<?php
-echo $uptime;
-   ?>
+	 <script type="text/javascript">
+$(function(){
+  $("button").on("click", function(){
+    var myId = $(this).attr("id");
+	$.post( "index.php?="myId, {id:myId} );  
+  });
+});
+	  </script>
  
    </head> 
    <body>
@@ -84,8 +79,7 @@ echo $uptime;
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">	
-		<center><?php
-echo $stats;	?>
+		<center>
 <br />
 			<button data-inline="true" data-mini="true"   id="reboot">reboot</button>
 			<br />	
