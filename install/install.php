@@ -281,11 +281,12 @@ $(document).ready(function(){
 <?php
 }
 function step_4(){
+
 ?>
 <body>
 <script>
 $(document).ready(function(){
-    $("Add Device").click(function(){
+    $("submit").click(function(){
         $.post("install.php?step=4",
             $('#post').serialize(),
             function(data,status){
@@ -316,8 +317,7 @@ Channel:
 </select>
 <input type="submit" name="submit" value="Add Device"></form> <a href="install.php?step=5"><button>Next</button></a>
 <div id="results"></div>
-<?php 
-}
+<?php
 if (isset($_POST['submit']) && $_POST['submit']=="Add Device") {
    $devicename=isset($_POST['name'])?$_POST['name']:"";
    $devicebrand=isset($_POST['brand'])?$_POST['brand']:"";
@@ -329,7 +329,8 @@ if (isset($_POST['submit']) && $_POST['submit']=="Add Device") {
 } else {
 include ''.$configfile.'';
 include ''.$functionsfile.'';
-addevice ($devicename,$devicebrand,$deviceremoteid,$deviceremoteid);
+addevice ($devicename,$devicebrand,$deviceremoteid,$devicechannel);
+}
 }
 }
 function step_5(){
@@ -371,16 +372,18 @@ echo '<option value="'.$provider.'">'.$provider.'</option>';
 <input type="submit" name="submit" value="submit"></form> <a href="install.php?step=6"></form><button>Next</button></a>
 <div id="results"></div>
 <?php
+
+if (isset($_POST['submit']) && $_POST['submit']=="submit") {
+$script = $_POST['smsprovider'];
 GLOBAL $configfile;
 GLOBAL $dbh;
 GLOBAL $functionsfile;
-if (isset($_POST['submit']) && $_POST['submit']=="submit") {
-$script = $_POST['smsprovider'];
 
 include ''.$configfile.'';
-
-$insertsmsprov = $dbh->prepare("INSERT INTO `smsprovider` (`provider` ,`script` ,`use`) VALUES (`name`,`:script`,`1`)");
+$use = "1";
+$insertsmsprov = $dbh->prepare("INSERT INTO `smsprovider` (script,`use`) VALUES (:script,:use)");
 $insertsmsprov->bindParam(':script', $script);
+$insertsmsprov->bindParam(':use', $use);
 $insertsmsprov->execute();
 echo "<br><b>Provider Added to Database</b><br />";
 }
