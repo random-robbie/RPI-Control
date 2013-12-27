@@ -423,6 +423,7 @@ if (isset($_POST['submit']) && $_POST['submit']=="Add User") {
 } else {
 GLOBAL $configfile;
 include (''.$configfile.'');
+include (''.$functionsfile.'');
 adduser ($name,$number);
 }
 }
@@ -463,6 +464,7 @@ if (isset($_POST['submit']) && $_POST['submit']=="add wol") {
 GLOBAL $configfile;
 include (''.$configfile.'');
 GLOBAL $functionsfile;
+include (''.$functionsfile.'');
 addmac ($name,$mac);
 }
 }
