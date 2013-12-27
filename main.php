@@ -17,14 +17,15 @@ include ('functions.php');
 	  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-	 <script type="text/javascript">
-$(function(){
-  $("button").on("click", function(){
-    var myId = $(this).attr("id");
-	$.post( "index.php?="myId, {id:myId} );  
+<script>
+ $(document).ready(function(){
+ $('button').click(function() {
+      $.get('index.php?id='+ this.id, function(data, status) {
+           
+     });
   });
 });
-	  </script>
+</script>
  
    </head> 
    <body>

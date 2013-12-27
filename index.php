@@ -11,17 +11,15 @@
 include ('config.php');
 include ('main.php');
 
-print_r ($_GET);
-print_r ($_POST);
-print_r ($_REQUEST);
-if (!empty($_POST['id'])) {
-exit();	
-}
-//Look for commands	
-//$url =  $_POST['id'];
-//echo $url;
+if(empty($_GET)) 
+    exit();
 
-exit(); die();
+
+	
+
+
+//Look for commands	
+$url =  $_GET["id"];
 
 // is it an on or off command?
 if (strpos($url,'-') !== false) {
@@ -38,13 +36,16 @@ $state = "0";
 }
 
 // Find Device in DB
+GLOBAL $dbh;
 $devlookup = $dbh->prepare("SELECT * FROM `devices` WHERE `name` = :name");
-$devlookup = bindParam(':name', $dev);
+$devlookup->bindParam(':name', $dev);
 $devlookup->execute();
-$devlookup->fetch(PDO::FETCH_ASSOC);
-$brand = $devlookup['brand'];
-$remote = $devlookup['remote'];
-$channel = $devlookup['channel'];
+$devid = $devlookup->fetch(PDO::FETCH_ASSOC);
+$brand = $devid['brand'];
+$remote = $devid['remoteid'];
+$channel = $devid['channel'];
+
+
 
 // execute command and update the state in DB
 commandit ($brand,$remote,$channel,$state);
