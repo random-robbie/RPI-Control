@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `brand` varchar(2) NOT NULL,
   `remoteid` varchar(20) NOT NULL,
   `channel` varchar(2) NOT NULL,
-  `state` varchar(2) NOT NULL
+  `state` varchar(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
