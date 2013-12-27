@@ -15,11 +15,10 @@ $uptime = shell_exec("cut -d. -f1 /proc/uptime");
 				$hours = $uptime/60/60%24;
 				$mins = $uptime/60%60;
 				
-$stats = shell_exec('.'.$filepath.'/scripts/stats.sh');
+
 
 //List Devices
-GLOBAL $dbh;
-$devices = $dbh->prepare("SELECT * FROM devices");
+$devices = $dbh->prepare("SELECT * FROM `devices`");
 $devices->execute();
 
 function updatestate ($dev,$state)
@@ -67,9 +66,10 @@ $mac = $wol2['mac'];
 passthru ('wakeonlan '.$mac.'');
 echo "Wake on Lan Command Sent";
 }
-function addevice ($devicename,$devicebrand,$deviceremoteid,$deviceremoteid) {
+
+function add_device ($devicename,$devicebrand,$deviceremoteid,$devicechannel) {
 GLOBAL $dbh;
-$insertdevice = $dbh->prepare ("INSERT INTO `devices` (name,brand,remoteid,channel) VALUES (:name,:brand,:remoteid,:channel)");
+$insertdevice = $dbh->prepare("INSERT INTO `devices` (`name`, `brand`, `remoteid`, `channel`) VALUES (:name, :brand, :remoteid, :channel)");
 $insertdevice->bindParam(':name', $devicename);
 $insertdevice->bindParam(':brand', $devicebrand);
 $insertdevice->bindParam(':remoteid', $deviceremoteid);

@@ -281,12 +281,13 @@ $(document).ready(function(){
 <?php
 }
 function step_4(){
-
+GLOBAL $configfile;
+GLOBAL $functionsfile;
 ?>
-<body>
+
 <script>
 $(document).ready(function(){
-    $("submit").click(function(){
+    $("Add Device").click(function(){
         $.post("install.php?step=4",
             $('#post').serialize(),
             function(data,status){
@@ -329,7 +330,8 @@ if (isset($_POST['submit']) && $_POST['submit']=="Add Device") {
 } else {
 include ''.$configfile.'';
 include ''.$functionsfile.'';
-addevice ($devicename,$devicebrand,$deviceremoteid,$devicechannel);
+GLOBAL $dbh;
+add_device ($devicename,$devicebrand,$deviceremoteid,$devicechannel);
 }
 }
 }

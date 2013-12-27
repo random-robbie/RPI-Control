@@ -15,9 +15,6 @@ if(empty($_GET))
     exit();
 
 
-	
-
-
 //Look for commands	
 $url =  $_GET["id"];
 
@@ -50,6 +47,7 @@ $channel = $devid['channel'];
 // execute command and update the state in DB
 commandit ($brand,$remote,$channel,$state);
 updatestate ($dev,$state);
+
 }
 
 
