@@ -49,6 +49,7 @@ SMS Setup
 
 Configuring for TextLocal to Post…
 
+
 you need to tell text local where to POST too. Its a simple setup process:
 
 1. Login to textlocal dashboard
@@ -57,6 +58,7 @@ you need to tell text local where to POST too. Its a simple setup process:
 4. Find the heading ‘Forward incoming messages to a URL’
 5. Enter the URL of your /sms/textlocal.php (ensure port forward has been done)
 6. Save!
+7. Edit textlocal.php and where $smskey is put your inbox keyword in and ensure you add a space.
 
 
 
