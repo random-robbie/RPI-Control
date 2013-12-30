@@ -10,13 +10,8 @@
 include ('config.php');
 include ('functions.php');
 
-
-// Grab and include the Service in use
-$service = $dbh->prepare("SELECT * FROM `smsprovider` WHERE `use` = 1");
-$service->execute();
-$prov = $service->fetch(PDO::FETCH_ASSOC);
-$script = $prov['script'];
-include ''.$script.'';
+GLOBAL $number;
+GLOBAL $message;
 
 // Does user have permission
 $permission = $dbh->prepare("SELECT * FROM `users` WHERE `number` = :number");
