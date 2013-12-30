@@ -16,29 +16,17 @@ Parts List
 
 [Raspberry pi](http://www.amazon.co.uk/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B008PT4GGC&linkCode=as2&tag=raspihel-21)
 
-[8GB SD Card]
+[8GB SD Card](http://www.amazon.co.uk/gp/product/B000VUVA62/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B000VUVA62&linkCode=as2&tag=raspihel-21)
 
-(http://www.amazon.co.uk/gp/product/B000VUVA62/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B000VUVA62&linkCode=as2&tag=raspihel-21)
+[Power Adaptor](http://www.amazon.co.uk/gp/product/B00AUKR4EU/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00AUKR4EU&linkCode=as2&tag=raspihel-21)
 
-Power Adaptor
+[Remote Power Sockets](http://www.amazon.co.uk/gp/product/B003XOXAVG/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B003XOXAVG&linkCode=as2&tag=raspihel-21)
 
-http://www.amazon.co.uk/gp/product/B00AUKR4EU/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00AUKR4EU&linkCode=as2&tag=raspihel-21
+[433 Transmitter](http://www.amazon.co.uk/gp/product/B00EQ1U5XQ/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00EQ1U5XQ&linkCode=as2&tag=raspihel-21)
 
-Remote Power Sockets
+[Breadboard](http://www.amazon.co.uk/gp/product/B00520JLWG/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00520JLWG&linkCode=as2&tag=raspihel-21)
 
-http://www.amazon.co.uk/gp/product/B003XOXAVG/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B003XOXAVG&linkCode=as2&tag=raspihel-21
-
-433 Transmitter
-
-http://www.amazon.co.uk/gp/product/B00EQ1U5XQ/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00EQ1U5XQ&linkCode=as2&tag=raspihel-21
-
-Breadboard
-
-http://www.amazon.co.uk/gp/product/B00520JLWG/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00520JLWG&linkCode=as2&tag=raspihel-21
-
-Dupont cables
-
-http://www.amazon.co.uk/gp/product/B00ATMHU52/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00ATMHU52&linkCode=as2&tag=raspihel-21
+[Dupont cables](http://www.amazon.co.uk/gp/product/B00ATMHU52/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00ATMHU52&linkCode=as2&tag=raspihel-21)
 
 
 
