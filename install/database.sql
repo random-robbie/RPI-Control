@@ -49,17 +49,6 @@ CREATE TABLE IF NOT EXISTS `smshistory` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `smsprovider`
---
-
-CREATE TABLE IF NOT EXISTS `smsprovider` (
-  `provider` varchar(50) NOT NULL,
-  `script` varchar(50) NOT NULL,
-  `use` varchar(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `users`

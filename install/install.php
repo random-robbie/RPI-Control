@@ -341,59 +341,9 @@ add_device ($devicename,$devicebrand,$deviceremoteid,$devicechannel);
 }
 }
 function step_5(){
-?>
-<h1> Add a SMS Provider</h1>
-<script>
-$(document).ready(function(){
-    $("submit").click(function(){
-        $.post("install.php?step=5",
-            $('#post').serialize(),
-            function(data,status){
-                $('#results').append(data);
-            }
-        );
-    });
-});
-</script>
-<?php
-$current2 = getcwd();
-$current = str_replace('install', '', $current2);
-$dir = "".$current."sms/";
-$results = glob($dir."*.php");
-$diremove = str_replace($dir, '', $results);
-GLOBAL $configfile;
-GLOBAL $functionsfile;
-GLOBAL $dbh;
+// Removed as no longer required.
+header ('location: install.php?step=6');
 
-?>
-<form method="post" action="install.php?step=5">
-<select name="smsprovider">
-<?php 
-foreach ($results as $provider)
-{
-echo '<option value="'.$provider.'">'.$provider.'</option>';
-}
-
-?>
-</select>
-<input type="submit" name="submit" value="submit"></form> <a href="install.php?step=6"></form><button>Next</button></a>
-<div id="results"></div>
-<?php
-
-if (isset($_POST['submit']) && $_POST['submit']=="submit") {
-$script = $_POST['smsprovider'];
-GLOBAL $configfile;
-GLOBAL $dbh;
-GLOBAL $functionsfile;
-
-include ''.$configfile.'';
-$use = "1";
-$insertsmsprov = $dbh->prepare("INSERT INTO `smsprovider` (script,`use`) VALUES (:script,:use)");
-$insertsmsprov->bindParam(':script', $script);
-$insertsmsprov->bindParam(':use', $use);
-$insertsmsprov->execute();
-echo "<br><b>Provider Added to Database</b><br />";
-}
 }
 function step_6(){
 
