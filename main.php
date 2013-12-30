@@ -21,7 +21,7 @@ include ('functions.php');
  $(document).ready(function(){
  $('button').click(function() {
       $.get('index.php?id='+ this.id, function(data, status) {
-           
+ window.location.reload(false);          
      });
   });
 });
