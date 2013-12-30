@@ -34,9 +34,9 @@ Parts List
 
 Apache Setup
 ------------
-
+```
 apt-get install apache php5 php5-cli php5-mysql -y
-
+```
 
 Config.php
 ----------
@@ -55,7 +55,7 @@ you need to tell text local where to POST too. Its a simple setup process:
 2. Select ‘inboxes’
 3. Select the inbox you wish to use and press ‘settings’
 4. Find the heading ‘Forward incoming messages to a URL’
-5. Enter the URL of your sms.php (ensure port forward has been done)
+5. Enter the URL of your /sms/textlocal.php (ensure port forward has been done)
 6. Save!
 
 
