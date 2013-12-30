@@ -12,7 +12,7 @@ Based on Original work from https://github.com/s7mx1/pihat
 Parts List
 ----------
 
-```
+
 
 [Raspberry pi](http://www.amazon.co.uk/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B008PT4GGC&linkCode=as2&tag=raspihel-21)
 
@@ -40,7 +40,7 @@ Dupont cables
 
 http://www.amazon.co.uk/gp/product/B00ATMHU52/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00ATMHU52&linkCode=as2&tag=raspihel-21
 
-```
+
 
 
 
