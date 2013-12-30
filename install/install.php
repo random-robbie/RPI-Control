@@ -80,7 +80,10 @@ switch($step){
   case '8':
   header2();
   echo ('
-<div> You have now finished the installer please remove the /install/ folder <br />
+<div> Please SSH in to your pi and run the following script '.$current.'scripts/setup.sh<br><br>
+This is required to finish the installation.
+<br />
+Once complete please remove this folder 
       
 </div>');
   footer2();
