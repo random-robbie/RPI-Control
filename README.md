@@ -1,31 +1,45 @@
 RPI control
 ------------
 
-This version currently does not fully work yet! 
+This version does work now but may be some bugs in the installer. 
 
 
 433Mhz Sender using Pi hat.
 
 Based on Original work from https://github.com/s7mx1/pihat
 
-The remote sockets - http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SREMSOC3PK3/dp/B003XOXAVG/
-
-The Transmitter - http://www.ebay.co.uk/itm/140958983913
-
-
-
 
 Parts List
 ----------
 
 ```
-1) http://www.amazon.co.uk/Raspberry-Pi-Model-Latest-VERSION/dp/B009SMWSQA
-2) USB mobile phone charger and USB to micro usb b (samsung blackberry nokia) or  - http://www.amazon.co.uk/Hostey%C2%AE-Micro-Supply-Charger-Raspberry/dp/B00C1EKF5S/ref=pd_sim_ce_5
-3) http://www.ebay.co.uk/itm/140958983913
-4) 16GB SD card - http://www.amazon.co.uk/For-Raspberry-preloaded-operating-partitioned/dp/B008IU78EK/ref=pd_bxgy_ce_text_z
-5) http://www.amazon.co.uk/Status-Remote-Controlled-Sockets-SREMSOC3PK3/dp/B003XOXAVG/ - remove control sockets
-6) USB wireless adaptor - http://www.amazon.co.uk/USB-Wifi-Adapter-Raspberry-Pi/dp/B009FA2UYK/ref=pd_sim_ce_7
-7 ) text local account - http://www.textlocal.com/?tlrx=162301.
+
+[Raspberry pi]
+(http://www.amazon.co.uk/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B008PT4GGC&linkCode=as2&tag=raspihel-21)
+
+8GB SD Card
+
+http://www.amazon.co.uk/gp/product/B000VUVA62/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B000VUVA62&linkCode=as2&tag=raspihel-21
+
+Power Adaptor
+
+http://www.amazon.co.uk/gp/product/B00AUKR4EU/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00AUKR4EU&linkCode=as2&tag=raspihel-21
+
+Remote Power Sockets
+
+http://www.amazon.co.uk/gp/product/B003XOXAVG/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B003XOXAVG&linkCode=as2&tag=raspihel-21
+
+433 Transmitter
+
+http://www.amazon.co.uk/gp/product/B00EQ1U5XQ/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00EQ1U5XQ&linkCode=as2&tag=raspihel-21
+
+Breadboard
+
+http://www.amazon.co.uk/gp/product/B00520JLWG/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00520JLWG&linkCode=as2&tag=raspihel-21
+
+Dupont cables
+
+http://www.amazon.co.uk/gp/product/B00ATMHU52/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00ATMHU52&linkCode=as2&tag=raspihel-21
 
 ```
 
@@ -36,22 +50,7 @@ Apache Setup
 
 apt-get install apache php5 php5-cli php5-mysql -y
 
-Place all in to your /var/www/ directorty
 
-
-```
-cd /usr/bin/
-Chmod 777 pihat
-```
-
-add the following line to /etc/sudoers
-```
-www-data ALL=(ALL) NOPASSWD: ALL
-```
-for WOL ensure you do 
-```
-apt-get install wakeonlan -y
-```
 Config.php
 ----------
 Please ensure you chmod this to 755 or 777
@@ -69,17 +68,15 @@ you need to tell text local where to POST too. Its a simple setup process:
 2. Select ‘inboxes’
 3. Select the inbox you wish to use and press ‘settings’
 4. Find the heading ‘Forward incoming messages to a URL’
-5. Enter the URL of your script.
+5. Enter the URL of your sms.php (ensure port forward has been done)
 6. Save!
 
-
-sms.php
-------------
 
 
 To do
 ---------------
-1) Make it work Fully
+1) Bug Hunt! - Ensure any issues you let me know
+2) new ideas - got an idea or what to intergrate a new sms provider email me :)
 
 For Me
 --------------
