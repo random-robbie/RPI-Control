@@ -79,7 +79,10 @@ switch($step){
   break;
   case '8':
   header2();
-  step_8();
+  echo ('
+<div> You have now finished the installer please remove the /install/ folder <br />
+      
+</div>');
   footer2();
   break;
   default:
@@ -328,9 +331,8 @@ if (isset($_POST['submit']) && $_POST['submit']=="Add Device") {
   if (empty($devicename) || empty($devicechannel) || empty($deviceremoteid) || empty($devicebrand)) {
    echo "All fields are required! Please re-enter.<br />";
 } else {
-include ''.$configfile.'';
-include ''.$functionsfile.'';
-GLOBAL $dbh;
+include ($configfile);
+include ($functionsfile);
 add_device ($devicename,$devicebrand,$deviceremoteid,$devicechannel);
 }
 }
@@ -469,15 +471,6 @@ GLOBAL $functionsfile;
 include (''.$functionsfile.'');
 addmac ($name,$mac);
 }
-}
-?>
-<?php
-function step_8(){
-echo ('
-<div> You have now finished the installer please remove the /install/ folder <br />
-      
-</div>');
-
 }
 }
 ?>
