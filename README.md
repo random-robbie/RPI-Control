@@ -67,7 +67,7 @@ To do
 ---------------
 1) Bug Hunt! - Ensure any issues you let me know
 
-2) new ideas - got an idea or what to intergrate a new sms provider email me :)
+2) new ideas - got an idea or want to intergrate a new sms provider email me :)
 
 For Me
 --------------
