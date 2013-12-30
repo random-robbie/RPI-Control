@@ -34,7 +34,7 @@ insertsms ($user,$message);
 $comm = explode( ' ', $message );
 $dev=$comm[0];
 $onoroff=$comm[1];
-//$onoroff=$comm[2];
+
 
 
 
@@ -47,13 +47,14 @@ updatehistory ($message,$user);
 exit();
 }
 
-
+strtoupper($onoroff);
 // Set on or off state
-if ($onoroff == "on") {
+if ($onoroff == "ON") {
 $state = "1";
 } else {
 $state = "0";
 }
+
 
 // Find Device in DB
 $devlookup = $dbh->prepare("SELECT * FROM `devices` WHERE `name` = :name");
@@ -63,6 +64,8 @@ $devlookup2 = $devlookup->fetch(PDO::FETCH_ASSOC);
 $brand = $devlookup2['brand'];
 $remote = $devlookup2['remoteid'];
 $channel = $devlookup2['channel'];
+
+
 
 
 // execute command
