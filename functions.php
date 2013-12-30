@@ -69,13 +69,24 @@ echo "Wake on Lan Command Sent";
 
 function add_device ($devicename,$devicebrand,$deviceremoteid,$devicechannel) {
 GLOBAL $dbh;
-$insertdev= $dbh->prepare("INSERT INTO `devices` (`name`, `brand`, `remoteid`, `channel`) VALUES (:name, :brand, :remote, :channel)");
+include('config.php');
+$checkdev = $dbh->prepare("SELECT * FROM `devices` WHERE (`channel` = :channel OR `name` = :name)");
+$checkdev->bindParam(':channel', $devicechannel);
+$checkdev->bindParam(':name', $devicename);
+$checkdev->execute();
+$count = $checkdev->rowCount();
+
+if ($count > "0") {
+echo "Device with the same name or channel number already exists";
+} else {
+$insertdev = $dbh->prepare("INSERT INTO `devices` (`name`, `brand`, `remoteid`, `channel`, `state`) VALUES (:name, :brand, :remote, :channel, 0)");
 $insertdev->bindParam(':name', $devicename);
 $insertdev->bindParam(':brand', $devicebrand);
 $insertdev->bindParam(':remote', $deviceremoteid);
 $insertdev->bindParam(':channel', $devicechannel);
 $insertdev->execute();
 echo "<br><b>Device Added to Database</b><br />";
+}
 }
 
 function addmac ($name,$mac) {
