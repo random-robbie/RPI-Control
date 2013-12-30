@@ -14,8 +14,7 @@ Parts List
 
 ```
 
-[Raspberry pi]
-(http://www.amazon.co.uk/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B008PT4GGC&linkCode=as2&tag=raspihel-21)
+[Raspberry pi](http://www.amazon.co.uk/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B008PT4GGC&linkCode=as2&tag=raspihel-21)
 
 8GB SD Card
 
