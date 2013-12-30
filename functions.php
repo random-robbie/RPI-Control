@@ -69,12 +69,12 @@ echo "Wake on Lan Command Sent";
 
 function add_device ($devicename,$devicebrand,$deviceremoteid,$devicechannel) {
 GLOBAL $dbh;
-$insertdevice = $dbh->prepare("INSERT INTO `devices` (`name`, `brand`, `remoteid`, `channel`) VALUES (:name, :brand, :remoteid, :channel)");
-$insertdevice->bindParam(':name', $devicename);
-$insertdevice->bindParam(':brand', $devicebrand);
-$insertdevice->bindParam(':remoteid', $deviceremoteid);
-$insertdevice->bindParam(':channel', $devicechannel);
-$insertdevice->execute();
+$insertdev= $dbh->prepare("INSERT INTO `devices` (`name`, `brand`, `remoteid`, `channel`) VALUES (:name, :brand, :remote, :channel)");
+$insertdev->bindParam(':name', $devicename);
+$insertdev->bindParam(':brand', $devicebrand);
+$insertdev->bindParam(':remote', $deviceremoteid);
+$insertdev->bindParam(':channel', $devicechannel);
+$insertdev->execute();
 echo "<br><b>Device Added to Database</b><br />";
 }
 
@@ -95,4 +95,16 @@ $insertuser->bindParam(':number', $number);
 $insertuser->execute();
 echo "<br><b>User Added to Database</b><br />";
 }
+
+function uptime ()
+{
+$data = shell_exec('uptime');
+  $uptime = explode(' up ', $data);
+  $uptime = explode(',', $uptime[1]);
+  $uptime = $uptime[0];
+
+  echo ('Current server uptime: '.$uptime.'
+');
+}
+
 ?>

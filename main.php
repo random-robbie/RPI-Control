@@ -57,9 +57,12 @@ include ('functions.php');
 			}
 			?>
 			<br />
+			<a href="#two"><button data-inline="true">Stats</button></a>
          </div>
          <div data-role="footer" data-position="fixed">   
             <h4>
+			<?php
+		uptime(); ?>
 			</h4>      
          </div>
       </div> 
@@ -80,7 +83,25 @@ include ('functions.php');
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">	
-		<center>
+		<center><pre>
+<b>Uptime:</b> 
+<?php system("uptime"); ?>
+
+<b>System Information:</b>
+<?php system("uname -a"); ?>
+
+
+<b>Memory Usage (MB):</b> 
+<?php system("free -m"); ?>
+
+
+<b>Disk Usage:</b> 
+<?php system("df -h"); ?>
+
+
+<b>CPU Information:</b> 
+<?php system("cat /proc/cpuinfo | grep \"model name\\|processor\""); ?>
+</pre>
 <br />
 			<button data-inline="true" data-mini="true"   id="reboot">reboot</button>
 			<br />	
@@ -99,6 +120,7 @@ include ('functions.php');
 	
 	<div data-role="footer">
 		<h4>
+		
 			</h4> 
 	</div><!-- /footer -->
 </div>
