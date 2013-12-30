@@ -16,7 +16,7 @@ $number2 = $_REQUEST['sender'];
 $message2 = $_REQUEST['content'];
 
 // Your Text Local Keyword ensure you add space after the keyword
-$smskey = " ";
+$smskey = "6WL98 ";
 
 // Convert 44 sender to 0
 $ptn = "/^44/";  

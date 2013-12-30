@@ -47,19 +47,27 @@ updatehistory ($message,$user);
 exit();
 }
 
-strtoupper($onoroff);
+$on = strtoupper($onoroff);
 // Set on or off state
-if ($onoroff == "ON") {
+if ($on == "ON") {
 $state = "1";
 } else {
 $state = "0";
 }
 
 
+
+
+
 // Find Device in DB
 $devlookup = $dbh->prepare("SELECT * FROM `devices` WHERE `name` = :name");
 $devlookup->bindParam(':name', $dev);
 $devlookup->execute();
+$count = $devlookup->rowCount();
+if ($count == "0") {
+echo "No Device with ".$dev." has been found in the Database";
+exit();
+}
 $devlookup2 = $devlookup->fetch(PDO::FETCH_ASSOC);
 $brand = $devlookup2['brand'];
 $remote = $devlookup2['remoteid'];
