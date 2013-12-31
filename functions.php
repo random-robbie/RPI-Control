@@ -185,4 +185,36 @@ function refreshpage ($url) {
 header('Location: '.$url.'');
 }
 
+function allon() {
+GLOBAL $devices;
+
+foreach ($devices as $device){
+$dev = $device['name'];
+$brand = $device['brand'];
+$remote = $device['remoteid'];
+$channel = $device['channel'];
+$state = "1";
+
+// execute command and update the state in DB
+commandit ($brand,$remote,$channel,$state);
+updatestate ($dev,$state);
+}
+}
+
+function alloff() {
+GLOBAL $devices;
+
+foreach ($devices as $device){
+$dev = $device['name'];
+$brand = $device['brand'];
+$remote = $device['remoteid'];
+$channel = $device['channel'];
+$state = "0";
+
+// execute command and update the state in DB
+commandit ($brand,$remote,$channel,$state);
+updatestate ($dev,$state);
+}
+}
+
 ?>

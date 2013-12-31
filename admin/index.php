@@ -90,11 +90,15 @@ switch($step){
 
 <?php
 function step_1(){ 
+$url2 = $_SERVER['REQUEST_URI'];
+$url = str_replace('/admin', '', $url2)
 ?>
 <div align="center">
 <a href="index.php?step=2" data-role="button" data-inline="true">Add Devices</a><a href="index.php?step=3" data-role="button" data-inline="true">Remove Devices</a><br />
 <a href="index.php?step=4" data-role="button" data-inline="true">Add Users</a><a href="index.php?step=5" data-role="button" data-inline="true">Remove Users</a><br />
 <a href="index.php?step=6" data-role="button" data-inline="true">Add Wol</a><a href="index.php?step=7" data-role="button" data-inline="true">Remove WOL</a><br />
+<br />
+<a href="<?php echo $url;?>" data-role="button" data-inline="true">Main Page</a>
 </div>
 <?php
 }

@@ -17,13 +17,23 @@ if(empty($_GET))
 
 //Look for commands	
 $url =  $_GET["id"];
-
 // is it an on or off command?
 if (strpos($url,'-') !== false) {
 $parts = explode("-", $url);
 $dev = $parts[0];
 $onoroff = $parts[1];
 
+if ($url == "all-on") {
+include('functions.php');
+allon();
+exit();
+}
+
+if ($url == "all-off") {
+include('functions.php');
+alloff();
+exit();
+}
 
 // Set on or off state
 if ($onoroff == "on") {

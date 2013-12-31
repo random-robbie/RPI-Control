@@ -56,7 +56,9 @@ include ('functions.php');
 			echo '<br />';
 			}
 			?>
+			<a href="#confirmation"><button data-inline="true" id="all-on">All On</button></a><a href="#confirmation"><button data-inline="true" id="all-off">All Off</button></a><br />
 			<br />
+			
 			<a href="#two"><button data-inline="true">Stats</button></a>
          </div>
          <div data-role="footer" data-position="fixed">   
