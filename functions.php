@@ -21,6 +21,14 @@ $uptime = shell_exec("cut -d. -f1 /proc/uptime");
 $devices = $dbh->prepare("SELECT * FROM `devices`");
 $devices->execute();
 
+//List Users
+$users = $dbh->prepare("SELECT * FROM `users`");
+$users->execute();
+
+//List wol
+$wollist = $dbh->prepare("SELECT * FROM `wol`");
+$wollist->execute();
+
 function updatestate ($dev,$state)
 {
 // update database with state
@@ -61,6 +69,11 @@ GLOBAL $dbh;
 $wol = $dbh->prepare("SELECT * FROM `wol` WHERE computer = :computer");
 $wol->bindParam(':computer', $computer);
 $wol->execute();
+$count = $wol->rowCount();
+if ($count == "0") {
+echo "No Computer with that name found";
+exit();
+}
 $wol2 = $wol->fetch(PDO::FETCH_ASSOC);
 $mac = $wol2['mac'];
 passthru ('wakeonlan '.$mac.'');
@@ -76,7 +89,7 @@ $checkdev->bindParam(':name', $devicename);
 $checkdev->execute();
 $count = $checkdev->rowCount();
 
-if ($count > "0") {
+if ($count > 0) {
 echo "Device with the same name or channel number already exists";
 } else {
 $insertdev = $dbh->prepare("INSERT INTO `devices` (`name`, `brand`, `remoteid`, `channel`, `state`) VALUES (:name, :brand, :remote, :channel, 0)");
@@ -91,20 +104,40 @@ echo "<br><b>Device Added to Database</b><br />";
 
 function addmac ($name,$mac) {
 GLOBAL $dbh;
+$checkmac = $dbh->prepare("SELECT * FROM `wol` WHERE (`computer` = :computer OR `mac` = :mac)");
+$checkmac->bindParam(':computer', $name);
+$checkmac->bindParam(':mac', $mac);
+$checkmac->execute();
+$countmac = $checkmac->rowCount();
+
+if ($countmac > 0) {
+echo "Computer name or mac already in database";
+} else {
+
 $insertmac= $dbh->prepare("INSERT INTO `wol` (`computer`, `mac`) VALUES (:computer, :mac)");
 $insertmac->bindParam(':computer', $name);
 $insertmac->bindParam(':mac', $mac);
 $insertmac->execute();
 echo "<br><b>WOL Added to Database</b><br />";
 }
-
+}
 function adduser ($name,$number) {
 GLOBAL $dbh;
+$checkuser = $dbh->prepare("SELECT * FROM `users` WHERE (`number` = :number OR `name` = :name)");
+$checkuser->bindParam(':name', $name);
+$checkuser->bindParam(':number', $number);
+$checkuser->execute();
+$countuser = $checkuser->rowCount();
+
+if ($countuser > "0") {
+echo "User or Number already in database";
+} else {
 $insertuser= $dbh->prepare("INSERT INTO `users` (`name`, `number`) VALUES (:name, :number)");
 $insertuser->bindParam(':name', $name);
 $insertuser->bindParam(':number', $number);
 $insertuser->execute();
 echo "<br><b>User Added to Database</b><br />";
+}
 }
 
 function uptime ()
@@ -116,6 +149,40 @@ $data = shell_exec('uptime');
 
   echo ('Current server uptime: '.$uptime.'
 ');
+}
+
+function removeuser ($name) {
+GLOBAL $dbh;
+GLOBAL $configfile;
+include($configfile);
+$remuser = $dbh->prepare("DELETE FROM `users` WHERE `name` = :name");
+$remuser->bindParam(':name', $name);
+$remuser->execute();
+echo "User Removed";
+}
+
+function removewol ($comp) {
+GLOBAL $dbh;
+GLOBAL $configfile;
+include($configfile);
+$remwol = $dbh->prepare("DELETE FROM `wol` WHERE `computer` = :computer ");
+$remwol->bindParam(':computer', $comp);
+$remwol->execute();
+echo "Wol Removed";
+}
+
+function removedevice ($device) {
+GLOBAL $dbh;
+GLOBAL $configfile;
+include($configfile);
+$remdev = $dbh->prepare("DELETE FROM `devices` WHERE `name` = :name ");
+$remdev->bindParam(':name', $device);
+$remdev->execute();
+echo "".$device." has been removed.";
+}
+
+function refreshpage ($url) {
+header('Location: '.$url.'');
 }
 
 ?>
