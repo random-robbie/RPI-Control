@@ -46,6 +46,14 @@ Please ensure you chmod this to 755 or 777
 SMS Setup
 ------------
 
+Please point the url forward on your sms provider to the url for your provider
+
+i.e http://myraspberrypi.com/sms/textlocal.php
+
+or 
+
+http://myraspberrypi.com/sms/smspiphp
+
 
 Configuring for TextLocal to Post…
 
@@ -61,6 +69,12 @@ you need to tell text local where to POST too. Its a simple setup process:
 7. Edit textlocal.php and where $smskey is put your inbox keyword in and ensure you add a space.
 
 
+Admin
+-----
+
+You can now navigate to a admin panel which allows you to alter the devices etc.
+
+just go to /admin/ in the url.
 
 
 To do
