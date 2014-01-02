@@ -42,11 +42,16 @@ $state = "1";
 $state = "0";
 }
 
+
+
+
 // Find Device in DB
 GLOBAL $dbh;
 $devlookup = $dbh->prepare("SELECT * FROM `devices` WHERE `name` = :name");
 $devlookup->bindParam(':name', $dev);
 $devlookup->execute();
+$count = $devlookup->rowCount();
+if ($count < "1"){
 $devid = $devlookup->fetch(PDO::FETCH_ASSOC);
 $brand = $devid['brand'];
 $remote = $devid['remoteid'];
@@ -57,7 +62,10 @@ $channel = $devid['channel'];
 // execute command and update the state in DB
 commandit ($brand,$remote,$channel,$state);
 updatestate ($dev,$state);
-
+} else {
+include ('functions.php');
+wol ($dev);
+}
 }
 
 

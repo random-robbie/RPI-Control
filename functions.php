@@ -29,6 +29,25 @@ $users->execute();
 $wollist = $dbh->prepare("SELECT * FROM `wol`");
 $wollist->execute();
 
+function wollistings ()
+{
+GLOBAL $dbh;
+echo '<div align="center">';
+//List wol
+$wollist = $dbh->prepare("SELECT * FROM `wol`");
+$wollist->execute();
+$wolcount = $wollist->rowCount();
+if ($wolcount < 1) {
+// No devices
+} else {
+foreach ($wollist as $wol ){
+
+echo ''.$wol['computer'].' <button data-inline="true" id="'.$wol['computer'].'-on">Wake</button>';
+
+}
+}
+echo '</div>';
+}
 function updatestate ($dev,$state)
 {
 // update database with state

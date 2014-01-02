@@ -59,7 +59,7 @@ include ('functions.php');
 			<a href="#confirmation"><button data-inline="true" id="all-on">All On</button></a><a href="#confirmation"><button data-inline="true" id="all-off">All Off</button></a><br />
 			<br />
 			
-			<a href="#two"><button data-inline="true">Stats</button></a>
+			<a href="#two"><button data-inline="true">Stats</button></a><a href="#wol"><button data-inline="true">Wake On Lan</button></a>
          </div>
          <div data-role="footer" data-position="fixed">   
             <h4>
@@ -105,27 +105,39 @@ include ('functions.php');
 <?php system("cat /proc/cpuinfo | grep \"model name\\|processor\""); ?>
 </pre>
 <br />
-			<button data-inline="true" data-mini="true"   id="reboot">reboot</button>
-			<br />	
-			<a href="#confirmation"><button data-inline="true" data-mini="true"   id="wol">Wake Up PC</button>
-		<p><a href="#home" data-direction="reverse" data-role="button" data-theme="b">Back</a></p></center>
+<p><a href="#home" data-direction="reverse" data-role="button" data-theme="b">Back</a></p></center>
 		
 	</div><!-- /content -->
 	
 	<div data-role="footer">
-		<h4>
+		<h4><?php
+		uptime(); ?>
 			</h4> 
 	</div><!-- /footer -->
 </div><!-- /page two -->
 
 <!-- /content -->
 	
-	<div data-role="footer">
-		<h4>
-		
+	<!-- Start of second page: #wol -->
+<div data-role="page" id="wol" data-theme="a">
+
+
+	<div data-role="header">
+		<h1>Wake On Lan</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="a">
+		<h4><?php
+		wollistings (); ?>
+		<div id="results"></div>
+		<a href="#home" data-direction="reverse" data-role="button" data-theme="b">Back</a></p></center>
 			</h4> 
 	</div><!-- /footer -->
-</div>
+<div data-role="footer">
+		<h4><?php
+		uptime(); ?>
+			</h4> 
+	</div><!-- /footer -->
 
    </body>
 </html>
