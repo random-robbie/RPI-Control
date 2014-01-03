@@ -35,7 +35,7 @@ Parts List
 Apache Setup
 ------------
 ```
-apt-get install apache php5 php5-cli php5-mysql -y
+sudo apt-get install apache2 phpmyadmin php5-imagick php5-gd php-xml-parser php5-intl php5 php5-cli mysql-server mysql-client php5-mysql -y
 ```
 
 Config.php
