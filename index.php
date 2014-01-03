@@ -24,13 +24,9 @@ $dev = $parts[0];
 $onoroff = $parts[1];
 
 if ($url == "all-on") {
-include('functions.php');
 allon();
 exit();
-}
-
-if ($url == "all-off") {
-include('functions.php');
+} elseif ($url == "all-off") {
 alloff();
 exit();
 }
@@ -51,7 +47,7 @@ $devlookup = $dbh->prepare("SELECT * FROM `devices` WHERE `name` = :name");
 $devlookup->bindParam(':name', $dev);
 $devlookup->execute();
 $count = $devlookup->rowCount();
-if ($count < "1"){
+if ($count == "1"){
 $devid = $devlookup->fetch(PDO::FETCH_ASSOC);
 $brand = $devid['brand'];
 $remote = $devid['remoteid'];
@@ -63,7 +59,6 @@ $channel = $devid['channel'];
 commandit ($brand,$remote,$channel,$state);
 updatestate ($dev,$state);
 } else {
-include ('functions.php');
 wol ($dev);
 }
 }
